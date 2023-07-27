@@ -20,6 +20,9 @@ BOS involves three main parts: Chain, Components, and Gateways. They work togeth
 from the official docs:
 > The Blockchain Operating System (BOS) simplifies building, deploying and accessing decentralized frontends. Embrace the power of community and Web 3.
 
+- [Headover to Overview for Details:](./Overview/detail.md)
+
+
 
 ## 2. Introducing the Chains
 

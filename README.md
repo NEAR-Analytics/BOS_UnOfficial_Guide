@@ -12,7 +12,8 @@ This tutorial will guide you through understanding the essential components of t
 ## Contents
 
 1. Understanding the Main Parts
-2. Introducing the Chains
+   1. - [Headover to Overview for Details:](./Overview/detail.md)
+2. Introducing the Chain
 3. The Role of Components
 4. Exploring Gateways and VMs
 5. Utilizing Tools

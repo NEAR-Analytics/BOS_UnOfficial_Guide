@@ -1,5 +1,24 @@
 
 
+# BOS Overview
+
+
+<!-- create bookmarks to go to each section -->
+- [BOS Overview](#bos-overview)
+  - [Main Parts:](#main-parts)
+    - [1. Chain](#1-chain)
+      - [1.1 Smart Contracts:](#11-smart-contracts)
+    - [2. Components](#2-components)
+      - [2.1 Built-In Components:](#21-built-in-components)
+        - [Non-Exhaustive List of Built-in Components:](#non-exhaustive-list-of-built-in-components)
+      - [2.2 Widget and iFrame Components:](#22-widget-and-iframe-components)
+      - [Widgets:](#widgets)
+      - [iFrames:](#iframes)
+      - [2.3 Custom Components:](#23-custom-components)
+    - [3. Gateways:](#3-gateways)
+      - [3.1 VM:](#31-vm)
+
+
 
 
 This is an unofficial guide to understand the different moving parts of the BOS.
@@ -7,7 +26,7 @@ This is an unofficial guide to understand the different moving parts of the BOS.
 
 ## Main Parts:
 
-Creating applications on a blockchain operating system entails the collaboration of three distinct elements. If you're accustomed to a classic web infrastructure, you'll know it generally includes a backend that hosts the business logic and maintains a database, supplemented by a frontend.
+Creating applications on the blockchain operating system entails the collaboration of three distinct elements. If you're accustomed to a classic web infrastructure, you'll know it generally includes a backend that hosts the business logic and maintains a database, supplemented by a frontend.
 
 In our configuration, this structure is streamlined by engaging the Protocol as both a data repository and a hosting environment for all business logic. This logic can be programmed in a variety of ways, such as through a smart contract or a frontend web component. When considering the frontend interface, we employ Gateways powered by a Virtual Machine. These tools allow us to access, retrieve, and interact with components recorded on the blockchain, and also to execute specific functions, ensuring the smooth operation of the logic.
 
@@ -27,7 +46,7 @@ Here is a list:
 
 
 
-### Chain
+### 1. Chain
 
 The decentralized apps' source code is hosted on NEAR Blockchain, owing to its economical storage capability for HTML/CSS/JS, which costs merely a few cents.
 These components have the ability to invoke functions across any blockchain, and currently support all EVM chains, such as Polygon and zkSync, in addition to NEAR.
@@ -35,7 +54,7 @@ These components have the ability to invoke functions across any blockchain, and
 The NEAR Protocol runs on nodes, some nodes known as validators , which generate blocks, and others are regular nodes that propagate data.
 We are not required to understand how a node works, other than the idea that we will be interacting with the Blockchain to retreive components, read and write data through dedicated smart contracts and APIs.
 
-#### Smart Contracts:
+#### 1.1 Smart Contracts:
 
 Smart contracts in the NEAR Protocol are programs that interact with the network. They are, however, not limited to being written in Rust. NEAR Protocol supports both Rust and AssemblyScript for writing smart contracts. These smart contracts use the protocol to facilitate various operations, such as token transfers, decentralized applications (dApps) interactions, and more within the NEAR network.
 
@@ -45,7 +64,7 @@ For the purpose of interacting and building the BOS, we will be utilizing at Soc
 https://docs.near.org/social/contract
 
 
-### Components
+### 2. Components
 
 While constructing a decentralized web application, we will leverage components written in JavaScript to communicate with the targeted blockchain, specifically NEAR in this instance. If you have prior experience with frontend frameworks akin to reactJS, you'll find these components have comparable characteristics. One component can be integrated within another, and in aggregate, they can be employed to establish a frontend-based web application.
 
@@ -69,13 +88,12 @@ Snippet Example:
 
 There are three types of components:
 
-#### Built-In Components:
 
 
 
 There are three categories of components:
 
-#### 1. Built-In Components:
+#### 2.1 Built-In Components:
 These are fundamental units maintained by gateways. We'll delve into the specifics of these in the following sections.
 
 In the Blockchain Operating System, you construct miniature applications, referred to as Components, each of which addresses a specific challenge. Subsequently, these Components are combined to assemble a fully functional frontend. The Blockchain Operating System offers a suite of ready-made, Built-In components to expedite the development of your decentralized frontend.
@@ -97,7 +115,7 @@ In the Blockchain Operating System, you construct miniature applications, referr
 
 
 
-#### 2. Widget and iFrame Components:
+#### 2.2 Widget and iFrame Components:
 These two kinds of components enable us to extend our development beyond Built-In components.
 
 #### Widgets:
@@ -110,11 +128,11 @@ The iFrame component endows us with the ability to incorporate external JS libra
 
 Even though this might appear to be the ultimate solution for constructing a variety of complex web applications, we'll discuss a more efficient method to allow our Widgets to access libraries beyond the scope of Built-In components.
 
-#### 3. Custom Components:
+#### 2.3 Custom Components:
 Here, we introduce a few new concepts, but it's time to delve deeper into the Blockchain Operating System. Components can be incorporated into a gateway. Essentially, a gateway acts as a web application or browser that identifies and invokes a component and subsequently renders that component.
 
 
-### Gateways:
+### 3. Gateways:
 
 A gateway is an interface into the blockchain, it utilizes components of all sorts from built-in components into the gateway, custom widgets and javascript packages to invoke the NEAR APIs and SDK.
 
@@ -130,7 +148,7 @@ Examples of gateways include near.org, near.social, nearatlas.com, and nearpad.d
 Keep in mind, one of the key differences from traditional stack web applications here is that our web app components are stored outside the local codebase, the components reside within the blockchain. They are accesable through any Gateway that contains the right VM.
 
 
-#### VM:
+#### 3.1 VM:
 
 The NEAR Gateway VM is a type of virtual machine that executes the code of components. It offers a sandboxed environment for securely rendering components.
 
